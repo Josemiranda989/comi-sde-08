@@ -1,0 +1,88 @@
+:root {
+    --primario: #bcec4c;
+    --secundario: #6cacdc;
+    --links: #2c7c44;
+    --bg-primario: #947c6c;
+    --bg-secundario: #b49c94;
+    --shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.50);
+}
+
+
+.container {
+    background-color: var(--secundario);
+    height: 400px;
+    width: 70%;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+    position: relative;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    text-align: center;
+/*     animation-name: move;
+    animation-duration: 2s;
+    animation-iteration-count: infinite; */
+    animation: move 3s infinite;
+    position: relative;
+}
+
+@keyframes move {
+    0%{opacity: 10%; left: -50px;}
+    50%{transform: translateY(-20); opacity: 40%; left:50px}
+    100%{opacity: 10%;left:-50px}
+}
+
+input {
+    outline: none
+}
+
+input:focus {
+    color: red;
+    border: solid 3px greenyellow;
+}
+
+.form__btn {
+    background-color: var(--primario);
+    border: 2px solid var(--bg-secundario);
+    border-radius: 10px;
+    padding: 5px 20px;
+    margin: 10px 0;
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.50);
+    /*     transition-property: background-color;
+    transition-duration: 3s;
+    transition-property: color;
+    transition-duration: 1s; */
+    /*     transition: background-color, 3s,
+                color, 1s; */
+    transition: all 0.5s;
+}
+
+.form__btn:hover {
+    background-color: var(--links);
+    color: var(--primario);
+
+}
+
+label {
+    color: var(--links)
+}
+
+.btn__google {
+    background-color: var(--primario);
+    color: var(--bg-secundario);
+    padding: 5px 10px;
+    border-radius: 100%;
+    font-weight: 900;
+    position:absolute;
+    right: -10px;
+    box-shadow: var(--shadow);
+}

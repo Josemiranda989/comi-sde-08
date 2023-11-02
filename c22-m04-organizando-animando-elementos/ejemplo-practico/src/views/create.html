@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Store</title>
+    <!-- Estilos -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/create.css">
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans&display=swap" rel="stylesheet">
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header class="nav">
+        <nav class="nav-top">
+            <a href="/"><img class="logo" src="/img/logo.png" alt="logo-game-store"></a>
+            <ul class="nav-top__links">
+                <li><a href="/login">Ingresar</a></li>
+                <li><a href="/register">Registrarse</a></li>
+            </ul>
+        </nav>
+        <ul class="nav-down">
+            <li><a href="">Nuevo</a></li>
+            <li><a href="">Mas vendidos</a></li>
+            <li><a href="">Ranking</a></li>
+            <li><a href="">Consolas</a></li>
+            <li><a href="">Free to play</a></li>
+        </ul>
+    </header>
+
+    <main class="container">
+        <h1 class="title">New Game</h1>
+        <form action="/create" method="get">
+            <label for="game">Name:</label>
+            <input type="text" name="game" id="game" placeholder="Over watch">
+
+            <label for="price">Price:</label>
+            <input type="number" name="price" id="price"  min="0">
+
+            <label for="release">Release Date:</label>
+            <input type="date" name="release" id="release">
+
+            <label for="typeCamera">Type Camera:</label>
+            <select name="typeCamera" id="typeCamera">
+                <option value="1">1</option>
+                <option value="3">3</option>
+            </select>
+
+            <div class="platforms">
+                <p>Platforms</p>
+                <label for="ps5">PS5</label>
+                <input type="checkbox" name="platforms" id="ps5" value="ps5">
+                <label for="pc">Pc</label>
+                <input type="checkbox" name="platforms" id="pc" value="pc">
+            </div>
+
+      
+            <button class="form__btn"type="submit">Submit</button>
+        </form>
+        <a href="https://google.com.ar" class="btn__google">G</a>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__title">Derechos de autor</div>
+        <img class="logo" src="/img/logo.png" alt="logo">
+    </footer>
+</body>
+
+</html>

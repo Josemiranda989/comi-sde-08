@@ -1,0 +1,28 @@
+:root {
+    --primario: #bcec4c;
+    --secundario: #6cacdc;
+    --links: #2c7c44;
+    --bg-primario: #947c6c;
+    --bg-secundario: #b49c94;
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    margin: 10px auto;
+    background-color: var(--bg-secundario);
+    border-radius: 10px;
+}
+
+.product-img {
+    width: 60%;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.description {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
