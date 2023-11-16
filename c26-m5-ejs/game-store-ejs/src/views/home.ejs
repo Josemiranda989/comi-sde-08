@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('./partials/head.ejs', {myStyles: "home", title: "Bienvenidos a gameStore"}) %>
+
+<body>
+
+    <%- include('./partials/header.ejs') %>
+    
+    <main>
+        <section class="container">
+            <% juegos.forEach(juego => { %>
+                <article class="game">
+                    <h3 class="game__title"><a href="https://www.freetogame.com/open/overwatch-2"><%= juego.nombre %></a></h3>
+                    <img class="game__img" src="https://www.freetogame.com/g/540/thumbnail.jpg" alt="juego">
+                </article>
+            <% }) %>
+        </section>
+    </main>
+    <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>

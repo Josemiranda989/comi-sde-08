@@ -1,0 +1,48 @@
+:root {
+    --primario: #bcec4c;
+    --secundario: #6cacdc;
+    --links: #2c7c44;
+    --bg-primario: #947c6c;
+    --bg-secundario: #b49c94;
+}
+
+.container {
+    background-color: var(--bg-secundario);
+    width: 70%;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 0 black;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    color: rgb(56, 54, 54);
+}
+
+input {
+    border-style: none;
+    font-size: 1.2rem;
+    padding: 10px;
+}
+
+input:focus {
+    color: var(--secundario);
+    border:solid 3px var(--primario);
+}
+
+button {
+    background-color: var(--bg-primario);
+    border-radius: 10px;
+    padding: 10px 5px;
+    margin: 10px 0;
+}
+
+button:hover {
+    background-color: var(--links);
+    cursor: pointer;
+}
