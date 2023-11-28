@@ -13,8 +13,10 @@ const controller = {
 		res.render('index.ejs', {inDiscount, visited})
 	},
 	search: (req, res) => {
-		// Do the magic
-	},
+		let palabra = (req.query.keywords).toLowerCase()
+		let searchProducts = products.filter(product => (product.name).toLowerCase().includes(palabra))
+		res.render('results.ejs', {searchProducts:searchProducts, palabra})
+	}
 };
 
 module.exports = controller;

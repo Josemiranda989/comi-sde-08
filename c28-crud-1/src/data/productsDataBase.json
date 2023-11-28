@@ -142,32 +142,5 @@
   "category": "in-sale",
   "description": "Deja que la música dance cobre vida con EXTRA BASS™ Anima el ambiente con EXTRA BASS™1. Un radiador pasivo trabaja con el parlante monoaural para potenciar los tonos bajos y mejorar los graves, a pesar del tamaño compacto. ",
   "image": "img-parlante-sony.jpg"
- },
- {
-  "id": "dca10150-9beb-4b67-9f54-db98c7ec4739",
-  "image": "default-image.png",
-  "name": "Impresora Ender 3",
-  "price": "123",
-  "discount": "12",
-  "category": "in-sale",
-  "description": "....................................................."
- },
- {
-  "id": "a4aa999d-2206-4cc9-a433-5a21dee54040",
-  "image": "default-image.png",
-  "name": "Impresora Ender 3",
-  "price": "123",
-  "discount": "0",
-  "category": "in-sale",
-  "description": "vczzczvczxvvzxzvzvxzvxzvxzvxzvxbzbv"
- },
- {
-  "id": "7c3ae5c4-340e-41ea-b6cc-c23409d61398",
-  "image": "default-image.png",
-  "name": "sadda",
-  "price": "123",
-  "discount": "0",
-  "category": "in-sale",
-  "description": "sadasdas"
  }
 ]
