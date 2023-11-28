@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head -->
+<%- include('partials/head', {title: 'Inicio'}) %>
+<body>
+	<!-- Header -->
+	<%- include('partials/headerNavbar') %>
+	<!-- /Header -->
+	
+	<!-- Banner -->
+	<div class="banner"></div>
+	<!-- /Banner -->
+
+	<!-- ultima visita -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Basado en tu última visita</h2>
+			</div>
+			<!-- Show the "visited" products -->
+			<div class="col-12 col-sm-6 col-lg-3">
+			<% visited.forEach(product => { %>
+				<section class="product-box">
+					<a href="/products/detail/<%= product.id %>">
+						<figure class="product-box_image">
+							<img src="/images/products/<%= product.image %>" alt="imagen de producto">
+						</figure>
+						<article class="product-box_data">
+							<h2>$<%= product.price %></h2>
+							<span><%= product.discount %> % OFF</span>
+							<p><%= product.name %></p>
+							<i class="fas fa-truck"></i>
+						</article>
+					</a>
+				</section>
+			<% }) %>
+			</div>
+		</div>
+	</div>
+	<!-- /ultima visita -->
+
+	<!-- Ofertas -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Ofertas</h2>
+			</div>
+			<!-- Show the "in-sale" products -->
+			<div class="col-12 col-sm-6 col-lg-3">
+				<% inDiscount.forEach(product => { %>
+					<section class="product-box">
+						<a href="/products/detail/<%= product.id %>">
+							<figure class="product-box_image">
+								<img src="/images/products/<%= product.image %>" alt="imagen de producto">
+							</figure>
+							<article class="product-box_data">
+								<h2>$<%= product.price %></h2>
+								<span><%= product.discount %> % OFF</span>
+								<p><%= product.name %></p>
+								<i class="fas fa-truck"></i>
+							</article>
+						</a>
+					</section>
+				<% }) %>
+			</div>
+		</div>
+	</div>
+	<!-- /Ofertas -->
+
+	<!-- footer -->
+	<%- include('partials/footer') %>
+	<!-- /footer -->
+</body>	
+</html>
