@@ -10,18 +10,19 @@ const storage = multer.diskStorage({
     }
 })
 
+const fileFilter = function (req, file, cb) {
+    // Verifica si el archivo es una imagen
+    console.log('tipo de archivo ', file.mimetype);
+    if (file.mimetype.startsWith('image/')) {
+      cb(null, true);
+    } else {
+      cb(new Error('El archivo no es una imagen, vuelve atras e intenta de nuevo'), false);
+    }
+  };
+
 const upload = multer({
     storage: storage,
-   /*  fileFilter: (req, file, cb) => {
-        console.log("El tipo de archivo es " + file.mimetype);
-        let mimetypes = ["image/png", "image/jpg", "image/jpeg", "image/gif"]
-        if (mimetypes.includes(file.mimetype)) {
-            cb(null, true);
-        } else {
-            cb(null, false);
-            return cb(new Error('Formato de archivo invalido'));
-        }
-    } */
+    fileFilter: fileFilter
 })
 
 module.exports = upload

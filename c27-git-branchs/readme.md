@@ -43,7 +43,14 @@ git merge development
 ## Eliminar branch
 ```git branch -d development```
 
+## Agregar tags
+- Al crear un tag se genera una etiqueta en base al ultimo commit
+```
+git tag Sprint-1 -m "Sprint 1 terminado"
+git push --tags
+```
+
 
 - [Link flujos de trabajo](https://www.atlassian.com/es/git/tutorials/syncing)
-- [Drive DH](https://drive.google.com/drive/u/1/folders/1ljblvtX_PMgyt5ffq-Gj_XJjRY6AAooW)
+- [Drive DH](https://drive.google.com/file/d/11Sa5qfHWUjHi7OvRRqVRUaOExwnVxJfN/view?usp=drive_link)
 
