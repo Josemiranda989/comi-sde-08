@@ -1,0 +1,39 @@
+<%- include('./partials/head.ejs') %>
+
+    <body>
+        <!-- Navbar (sit on top) -->
+        <%- include('./partials/header.ejs') %>
+
+
+
+        <form class="form-create" action="/editar-plato/<%= plato.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <h1>Actualizar plato</h1>
+
+            <label for="titulo">Titulo</label>
+            <input type="text" name="titulo" id="titulo" placeholder="Ingresa tu titulo" value="<%= plato.titulo %>">
+            
+            <label for="descripcionCorta">Descripcion Corta</label>
+            <input type="text" name="descripcionCorta" id="descripcionCorta" placeholder="Ingresa tu descripcionCorta" value="<%= plato.descripcionCorta %>">
+
+            <label for="descripcionDetallada">Descripcion Detallada</label>
+            <textarea name="descripcionDetallada" id="descripcionDetallada" cols="30" rows="10">
+                <%= plato.descripcionDetallada %>
+            </textarea>
+
+            <label for="precio">Precio</label>
+            <input type="number" name="precio" id="precio" placeholder="Ingresa el precio" value="<%= plato.precio %>">
+
+            <label for="img">Ingresa una imagen del producto</label>
+            <input type="file" name="img" id="img">
+
+            <button type="submit">Actualizar producto</button>
+        </form>
+
+
+
+        <!-- Footer -->
+        <%- include('./partials/footer.ejs') %>
+
+    </body>
+
+    </html>
