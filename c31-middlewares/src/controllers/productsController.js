@@ -1,9 +1,10 @@
+const { validationResult } = require('express-validator');
 const fs = require('fs');
 const path = require('path');
 const { v4: uuidv4 } = require('uuid')
 
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
@@ -27,11 +28,17 @@ const controller = {
 
 	// Create -  Method to store
 	store: (req, res) => {
+		let results = validationResult(req)
+		// console.log('1- errors', results);
+		// console.log('-------------------------------');
+		// console.log('2- errors mapped', results.mapped());
+
+		if(results.isEmpty()){
 		// creamos nuevo producto del formulario con req.body
 		const newProduct = {
 			// id: products.length + 1,
 			id: uuidv4(), //id unico uuid
-			image: 'default-image.png', //imagen por defecto
+			image: req.file?.filename || 'default-image.png', //imagen por defecto
 			...req.body // spread operator
 		}
 		// Agrego nuevo producto al listado
@@ -40,6 +47,11 @@ const controller = {
 		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '))
 		// redireccionamos al listado de productos
 		res.redirect('/products')
+		} else {
+			// res.render('product-create-form.ejs', {errors: results.errors, oldData: req.body})
+			res.render('product-create-form.ejs', {errors: results.mapped(), oldData: req.body})
+		}
+
 	},
 
 	// Update - Form to edit
@@ -49,14 +61,18 @@ const controller = {
 	},
 	// Update - Method to update
 	update: (req, res) => {
+		// JSON de productos
 		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+		// Buscar el producto a editar
 		const pToEdit = products.find(product => product.id == req.params.id)
+		// Actualiza o deja el valor original del producto
 		pToEdit.name = req.body.name || pToEdit.name
 		pToEdit.price = req.body.price || pToEdit.price
 		pToEdit.discount = req.body.discount || pToEdit.discount
 		pToEdit.category = req.body.category || pToEdit.category
 		pToEdit.description = req.body.description || pToEdit.description
-		pToEdit.image = req.body.image || pToEdit.image
+		pToEdit.image = req.file?.filename || pToEdit.image
+		// Escribe el nuevo JSON de productos
 		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '))
 		res.redirect('/products')
 	},
@@ -64,32 +80,14 @@ const controller = {
 	// Delete - Delete one product from DB
 	destroy: (req, res) => {
 		const id = req.params.id
-		let newProducts = products.filter(product => product.id != id)
-		fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '))
-		res.redirect('/products')
+		productToDelete = products.find(product => product.id == id)
+		products = products.filter(product => product.id != id)
+		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '))
+		if(productToDelete.image != 'default-image.png'){ 
+			fs.unlinkSync(path.join(__dirname, '../../public/images/products/', productToDelete.image))
+		}
+		res.redirect('/products/')
 	}
 };
 
 module.exports = controller;
-
-/* update: (req, res) => {
-    const id = req.params.id;
-    const productIndex = products.findIndex(product => product.id == id);
-
-    if (productIndex !== -1) {
-        // Crear un nuevo objeto product utilizando el spread operator
-        const updatedProduct = {
-            ...products[productIndex],
-            ...req.body
-        };
-
-        // Actualizar el objeto en el array
-        products[productIndex] = updatedProduct;
-
-        // Guardar en el archivo o realizar otras acciones necesarias
-        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
-
-        // Redireccionar o enviar respuesta según sea necesario
-        res.redirect('/products');
-    }
-} */
