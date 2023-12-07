@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+         <h1>Bievenidos a la vista de perfil de <%= user.email %></h1>
+         <p><%= user.id %></p>
+         <p><%= user.password %></p>      
+         
+         <a href="/users/logout">Cerrar sesión</a>
+</body>
+</html>
