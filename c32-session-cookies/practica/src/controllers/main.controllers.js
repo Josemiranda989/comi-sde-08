@@ -5,7 +5,7 @@ module.exports = {
         }
         req.session.visits++
 
-        res.render('home.ejs', {visits: req.session.visits})
+        res.render('home.ejs', {visits: req.session.visits, user: req.session.userLogged})
     },
     visits: (req, res) => {
         res.render('visits.ejs', {visits: req.session.visits})

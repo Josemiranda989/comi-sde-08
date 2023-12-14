@@ -30,6 +30,7 @@ module.exports = {
         res.redirect('/')
     },
     login: (req, res) => {
+        console.log(req.session?.userLogged);
         res.render('users/login.ejs')
     },
     processLogin: (req, res) => {

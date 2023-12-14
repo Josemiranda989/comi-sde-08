@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
     <title>Home</title>
 </head>
-<body>
-    
+<body <%= locals.user.email == 'patito@gmail.com' ? 'class=bg-patito' : 'class="bg-osito"'  %>>
+    <% if (locals.user != undefined) { %>
+        <h4>Hola <%= user.email %>, este es tu id: <%= user.id %></h4>     
+    <% } %>
          <h1>Bievenidos al home</h1>
          <h3>Aquí req.session.visits valeee : <%= visits %></h3>
 </body>
