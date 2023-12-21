@@ -57,6 +57,7 @@ module.exports = {
     },
     logout:(req, res) =>{
         req.session.userLogged = undefined
+        // req.session.destroy()
         res.clearCookie('rememberme')
         res.redirect('/')
     }
