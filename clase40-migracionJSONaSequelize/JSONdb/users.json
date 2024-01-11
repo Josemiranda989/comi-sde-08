@@ -1,0 +1,18 @@
+[
+ {
+  "id": 1,
+  "fullName": "Javi Herrera",
+  "email": "javi@dh.com",
+  "password": "$2a$10$kbHNepDXku1qKDytFK3RpuLtkW/dqMGDi4jXL7lNQUF8lm1HZ2.N.",
+  "country": "Colombia",
+  "avatar": "1609285636788_img.jpg"
+ },
+ {
+  "id": 2,
+  "fullName": "José Miranda",
+  "email": "josemiranda989@gmail.com",
+  "password": "$2a$10$vIBqTxMJsVIBNPceG6XX.e5oVCtDmbbCjbIRJWlYjk0JH4aYqSJDO",
+  "country": "Argentina",
+  "avatar": "1704995536933_img.jpg"
+ }
+]

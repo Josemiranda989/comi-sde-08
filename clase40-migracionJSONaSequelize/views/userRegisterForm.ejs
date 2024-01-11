@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('partials/head'); %>
+<body>
+	<%- include('partials/navbar'); %>
+	
+	<!-- Register-Form -->
+	<div class="container my-5">
+		<div class="row justify-content-center">
+			<div class="col-md-10">
+				<h2>Formulario de registro</h2>
+	
+				<form method="POST" action="/user/register" enctype="multipart/form-data">
+					<div class="row">
+						<div class="col-md-6 my-1">
+							<div class="form-group">
+								<label><b>Nombre completo:</b></label>
+								<input 
+									type="text" 
+									name="fullName" 
+									class="form-control <%= locals.errors && errors.fullName ? 'is-invalid' : null %>"
+									value="<%= locals.oldData ? oldData.fullName : null %>"
+								>
+								<% if (locals.errors && errors.fullName) { %>
+									<div class="text-danger">
+										<%= errors.fullName.msg %> 
+									</div>
+								<% } %>
+							</div>
+						</div>
+						<div class="col-md-6 my-1">
+							<div class="form-group">
+								<label><b>Correo electrónico:</b></label>
+								<input 
+									type="text" 
+									name="email" 
+									class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+									value="<%= locals.oldData ? oldData.email : null %>"
+								>
+								<% if (locals.errors && errors.email) { %>
+									<div class="text-danger">
+										<%= errors.email.msg %>
+									</div>
+								<% } %>
+							</div>
+						</div>
+						<div class="col-md-6 my-1">
+							<div class="form-group">
+								<label><b>Password:</b></label>
+								<input 
+									type="password" 
+									name="password" 
+									class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+								>
+								<% if (locals.errors && errors.password) { %>
+									<div class="text-danger">
+										<%= errors.password.msg %>
+									</div>
+								<% } %>
+							</div>
+						</div>
+						<div class="col-md-6 my-1">
+							<div class="form-group">
+								<label><b>País de nacimiento:</b></label>
+								<select 
+									name="country" 
+									class="form-select <%= locals.errors && errors.country ? 'is-invalid' : null %>"
+								>
+									<option value="">Elegí un país</option>
+									<%  
+										let countries = ['Argentina', 'Bolivia', 'Brasil', 'Colombia', 'Chile', 'Ecuador', 'Paraguay', 'Perú', 'Uruguay', 'Venezuela'];
+									%>
+									<% for (const oneCountry of countries) { %>
+										<option 
+											value="<%= oneCountry %>"
+											<%= locals.oldData && (oneCountry === oldData.country) ? 'selected' : null %> 
+										> <%= oneCountry %> </option>
+									<% } %>
+								</select>
+								<% if (locals.errors && errors.country) { %>
+									<div class="text-danger">
+										<%= errors.country.msg %>
+									</div>
+								<% } %>
+							</div>
+						</div>
+						<div class="col-md-6 my-1">
+							<div class="form-group">
+								<label><b>Imagen de perfil:</b></label>
+								<input 
+									type="file" 
+									name="avatar"
+									class="form-control <%= locals.errors && errors.avatar ? 'is-invalid' : null %>"
+								>
+								<% if (locals.errors && errors.avatar) { %>
+									<div class="text-danger">
+										<%= errors.avatar.msg %>
+									</div>
+								<% } %>
+							</div>
+						</div>
+						<div class="col-12 my-3">
+							<button type="submit" class="btn btn-primary">Registrarse</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- //Register-Form -->
+	
+	<%- include('partials/footer'); %>
+</body>
+</html>
