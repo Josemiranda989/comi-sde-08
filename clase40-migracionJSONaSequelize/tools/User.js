@@ -3,7 +3,7 @@
 const fs = require('fs');
 
 const User = {
-	fileName: './database/users.json',
+	fileName: './JSONdb/users.json',
 
 	getData: function () {
 		return JSON.parse(fs.readFileSync(this.fileName, 'utf-8'));
@@ -41,7 +41,7 @@ const User = {
 			...userData
 		}
 		allUsers.push(newUser);
-		fs.writeFileSync(this.fileName, JSON.stringify(allUsers, null,  ' '));
+		fs.writeFileSync(this.fileName, JSON.stringify(allUsers, null, ' '));
 		return newUser;
 	},
 

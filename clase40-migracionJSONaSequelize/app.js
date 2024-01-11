@@ -14,7 +14,7 @@ app.use(session({
 
 app.use(cookies());
 
-app.use(userLoggedMiddleware);
+// app.use(userLoggedMiddleware);
 
 app.use(express.urlencoded({ extended: false }));
 
