@@ -3,6 +3,7 @@ const session = require('express-session');
 const cookies = require('cookie-parser');
 const port = 4000;
 const app = express();
+const listEndpoints = require('express-list-endpoints')
 
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 
@@ -30,3 +31,5 @@ const userRoutes = require('./routes/userRoutes');
 
 app.use('/', mainRoutes);
 app.use('/user', userRoutes);
+
+console.log(listEndpoints(app));
