@@ -1,0 +1,61 @@
+<%- include('./partials/head.ejs') %>
+
+  <body>
+    <%- include('./partials/header.ejs') %>
+
+      <!-- Page content -->
+      <div class="ps-content">
+        <!-- About Section -->
+        <div class="ps-row ps-padding-64" id="about">
+          <div class="ps-col m6 ps-padding-large ps-hide-small">
+            <img src="/images/<%= about.img%>" class="ps-round ps-image ps-opacity-min" alt="SAbores que enamoran"
+              width="600" height="750" />
+          </div>
+
+          <div class="ps-col m6 ps-padding-large">
+            <h1 class="ps-center">
+              <%= about.titulo%>
+            </h1>
+            <br />
+            <p class="ps-large">
+              <%= about.descripcion1%><span class="ps-tag ps-light-grey">seasonal</span> ingredients.
+            </p>
+            <p class="ps-large ps-text-grey ps-hide-medium">
+              <%= about.descripcion2%>
+            </p>
+          </div>
+        </div>
+
+        <hr />
+        <!-- Menu Section -->
+        <div class="ps-row ps-padding-64" id="menu">
+          <div class="ps-col l6 ps-padding-large">
+            <h1 class="ps-center" id="nMenu">Nuestro Menu</h1>
+            <br />
+            <% listaPlatos.forEach(plato=> { %>
+              <h4>
+                <%= plato.titulo %>
+              </h4>
+              <p class="ps-text-grey">
+                <%= plato.descripcionCorta %> U$S <%= plato.precio %>
+              </p>
+              <br />
+
+              <div class="ps-col l6 ps-padding-large ps-img-menu">
+                <a href="/detail/<%= plato.id%>"><img src="/images/<%= plato.img%>"
+                    class="ps-round ps-image ps-opacity-min" alt="Menu" /></a>
+              </div>
+              <% }) %>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <%- include('./partials/footer.ejs') %>
+
+
+      </div>
+
+      <script src="/js/index.js"></script>
+  </body>
+
+  </html>

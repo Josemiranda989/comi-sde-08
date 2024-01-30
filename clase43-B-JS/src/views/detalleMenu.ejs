@@ -1,0 +1,36 @@
+<%- include('./partials/head.ejs') %>
+
+  <body>
+    <!-- Navbar (sit on top) -->
+    <%- include('./partials/header.ejs') %>
+
+      <!-- Page content -->
+      <div class="ps-content">
+
+        <!-- Menu Section -->
+        <div class="ps-row ps-padding-64" id="menu">
+          <div class="ps-col l6 ps-padding-large">
+            <h1 class="ps-center">
+              <%= getProduct.titulo%>
+            </h1>
+            <br />
+            <h4>
+              <%= getProduct.descripcionDetallada || "Plato típico" %>
+            </h4>
+            <p class="ps-text-grey">
+              <%= getProduct.precio%>
+            </p>
+          </div>
+
+          <div class="ps-col l6 ps-padding-large ps-img-menu">
+            <img src="/images/<%= getProduct.img%>" class="ps-round ps-image ps-opacity-min" alt="Menu" />
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <%- include('./partials/footer.ejs') %>
+
+      </div>
+  </body>
+
+  </html>
