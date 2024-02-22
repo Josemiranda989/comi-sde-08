@@ -1,0 +1,9 @@
+.navBar {
+    background-color: #373636;
+    border-bottom: 5px solid beige;
+}
+
+.borderRed {
+    border-top: 10px solid rgb(236, 10, 10);
+
+}

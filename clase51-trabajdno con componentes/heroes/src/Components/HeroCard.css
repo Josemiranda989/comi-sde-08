@@ -1,0 +1,15 @@
+.card {
+    width: 70%;
+    background-color: black;
+    border: 1px solid white;
+    margin: 10px auto;
+}
+
+.card h3 {
+    font-size: 3rem;
+    color: grey;
+}
+
+.card img {
+    width: 70%;
+}
