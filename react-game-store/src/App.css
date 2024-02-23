@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primario: #bcec4c;
+  --secundario: #6cacdc;
+  --links: #2c7c44;
+  --bg-primario: #947c6c;
+  --bg-secundario: #b49c94;
+  --text-color-dark: rgb(24, 24, 24);
+}
+
+a {
+  color: var(--links);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--text-color-dark);
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  background-color: var(--bg-primario);
+  font-family: 'Playpen Sans', cursive;
+  margin: 0 auto;
+  max-width: 1920px;
+}

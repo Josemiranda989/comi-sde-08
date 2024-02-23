@@ -1,0 +1,32 @@
+.nav {
+    background-color: var(--primario);
+}
+
+.nav-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px
+}
+
+.logo {
+    width: 40px;
+}
+
+.nav-top__links {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-down {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10px;
+}
+
+/* Media queries */
+@media (max-width: 440px) {
+    .nav-down {
+        display: none;
+    }
+}

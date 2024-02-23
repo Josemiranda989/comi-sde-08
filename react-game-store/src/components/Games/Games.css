@@ -1,0 +1,8 @@
+.container {
+    background-color: var(--secundario);
+    width: 90%;
+    margin: 10px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
