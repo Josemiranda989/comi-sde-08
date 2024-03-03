@@ -1,24 +1,25 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const SideBar = () => {
     return (
         <ul className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             {/*  <!-- Sidebar - Brand --> */}
-            <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+            <Link className="sidebar-brand d-flex align-items-center justify-content-center" to="/">
                 <div className="sidebar-brand-icon">
                     <img className="w-100" src="/images/logo-DH.png" alt="Digital House" />
                 </div>
-            </a>
+            </Link>
 
             {/*     <!-- Divider --> */}
             <hr className="sidebar-divider my-0" />
 
             {/*     <!-- Nav Item - Dashboard --> */}
             <li className="nav-item active">
-                <a className="nav-link" href="/">
+                <Link className="nav-link" to="/">
                     <i className="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard - DH movies</span></a>
+                    <span>Dashboard - DH movies</span></Link>
             </li>
 
             {/*     <!-- Divider --> */}
@@ -29,24 +30,24 @@ export const SideBar = () => {
 
             {/*     <!-- Nav Item - Pages --> */}
             <li className="nav-item">
-                <a className="nav-link collapsed" href="/">
+                <Link className="nav-link collapsed" to="/genre">
                     <i className="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
-                </a>
+                    <span>Genre</span>
+                </Link>
             </li>
 
             {/*     <!-- Nav Item - Charts --> */}
             <li className="nav-item">
-                <a className="nav-link" href="/">
+                <Link className="nav-link" to="/">
                     <i className="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
+                    <span>Charts</span></Link>
             </li>
 
             {/* <!-- Nav Item - Tables --> */}
             <li className="nav-item">
-                <a className="nav-link" href="/">
+                <Link className="nav-link" to="/">
                     <i className="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
+                    <span>Tables</span></Link>
             </li>
 
             {/*     <!-- Divider --> */}
