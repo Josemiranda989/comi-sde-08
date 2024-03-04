@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function SmallCard(props){
-    return(
+export function SmallCard(props) {
+    return (
         <div className="col-md-4 mb-4">
             <div className={`card border-left-${props.color} shadow h-100 py-2`}>
                 <div className="card-body">
@@ -18,7 +18,7 @@ function SmallCard(props){
                 </div>
             </div>
         </div>
-        
+
     )
 }
 
@@ -44,7 +44,3 @@ SmallCard.propTypes = {
         icon: PropTypes.string.isRequired
     })
 }
-
-
-
-export default SmallCard;

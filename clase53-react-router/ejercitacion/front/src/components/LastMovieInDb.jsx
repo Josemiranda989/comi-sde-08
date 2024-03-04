@@ -1,7 +1,7 @@
 import React from "react";
 import imagenFondo from "../assets/mandalorian.jpg";
 
-function LastMovieInDb() {
+export function LastMovieInDb() {
   return (
     <div className="col-lg-6 mb-4">
       <div className="card shadow mb-4">
@@ -36,4 +36,3 @@ function LastMovieInDb() {
   );
 }
 
-export default LastMovieInDb;

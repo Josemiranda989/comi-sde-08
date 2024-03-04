@@ -1,7 +1,7 @@
 import React from "react";
 import foto from "../assets/jordan-walke.png";
 
-function TopBar() {
+export function TopBar() {
   return (
     <React.Fragment>
       {/*<!-- Topbar -->*/}
@@ -64,4 +64,3 @@ function TopBar() {
     </React.Fragment>
   );
 }
-export default TopBar;

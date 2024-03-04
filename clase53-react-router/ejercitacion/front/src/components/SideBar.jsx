@@ -2,7 +2,7 @@ import React from "react";
 import image from "../assets/logo-DH.png";
 import { Link } from "react-router-dom";
 
-function SideBar() {
+export function SideBar() {
   return (
     <React.Fragment>
       {/*<!-- Sidebar -->*/}
@@ -76,4 +76,3 @@ function SideBar() {
     </React.Fragment>
   );
 }
-export default SideBar;

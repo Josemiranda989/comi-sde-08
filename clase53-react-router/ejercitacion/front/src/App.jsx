@@ -1,12 +1,12 @@
 import React from "react";
-import SideBar from "./components/SideBar";
-import GenresInDb from "./components/GenresInDb";
-import LastMovieInDb from "./components/LastMovieInDb";
-import ContentRowMovies from "./components/ContentRowMovies";
-import ContentWrapper from "./components/ContentWrapper";
-import TopBar from "./components/TopBar";
-import Footer from "./components/Footer";
-import NotFound from "./components/NotFound";
+import { SideBar } from "./components/SideBar";
+import { GenresInDb } from "./components/GenresInDb";
+import { LastMovieInDb } from "./components/LastMovieInDb";
+import { ContentRowMovies } from "./components/ContentRowMovies";
+import { ContentWrapper } from "./components/ContentWrapper";
+import { TopBar } from "./components/TopBar";
+import { Footer } from "./components/Footer";
+import { NotFound } from "./components/NotFound";
 import { Route, Routes } from "react-router";
 
 import "./App.css";

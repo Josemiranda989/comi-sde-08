@@ -13,7 +13,7 @@ const divStyle = {
 const liStyle = { listStyleType: "none" };
 const ulStyle = { display: "flex", justifyContent: "center" };
 
-const NotFound = () => {
+export const NotFound = () => {
   return (
     <div style={divStyle}>
       <img style={imgStyle} src={eric} alt="eric-img" />
@@ -52,4 +52,3 @@ const NotFound = () => {
   );
 };
 
-export default NotFound;

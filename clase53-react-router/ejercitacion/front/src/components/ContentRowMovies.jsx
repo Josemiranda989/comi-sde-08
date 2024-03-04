@@ -1,5 +1,5 @@
 import React from "react";
-import SmallCard from "./SmallCard";
+import { SmallCard } from "./SmallCard";
 
 /*  Cada set de datos es un objeto literal */
 
@@ -32,7 +32,7 @@ let actorsQuantity = {
 
 let cartProps = [moviesInDB, totalAwards, actorsQuantity];
 
-function ContentRowMovies() {
+export function ContentRowMovies() {
   return (
     <div className="row">
       {cartProps.map((movie, i) => {
@@ -42,4 +42,3 @@ function ContentRowMovies() {
   );
 }
 
-export default ContentRowMovies;
