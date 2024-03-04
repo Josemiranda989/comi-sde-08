@@ -27,7 +27,6 @@ export class Chart extends Component {
         fetch('http://localhost:3001/api/movies')
             .then(res => res.json())
             .then(movies => {
-                console.log(movies.data);
                 this.setState({ tableRowsData: movies.data })
             })
             .catch(error => console.log(error.message))
